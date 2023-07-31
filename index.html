@@ -18,7 +18,7 @@
     fetch(versionFileUrl)
       .then(response => response.text())
       .then(version => {
-        const currentVersion = '0'; // Replace this with the version of your website
+        const currentVersion = '1'; // Replace this with the version of your website
         if (version.trim() !== currentVersion) {
           // If versions don't match, refresh the page to update
           location.reload();
