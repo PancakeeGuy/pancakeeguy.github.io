@@ -10,12 +10,12 @@
 <script>
   // Function to check for the latest version on GitHub
   function checkForUpdates() {
-    const versionFileUrl = 'https://raw.githubusercontent.com/your_username/your_repository/main/version.txt';
+    const versionFileUrl = 'https://raw.githubusercontent.com/PancakeeGuy/website/main/version';
 
     fetch(versionFileUrl)
       .then(response => response.text())
       .then(version => {
-        const currentVersion = '1.0.0'; // Replace this with the version of your website
+        const currentVersion = '0'; // Replace this with the version of your website
         if (version.trim() !== currentVersion) {
           // If versions don't match, refresh the page to update
           location.reload();
