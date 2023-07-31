@@ -7,8 +7,11 @@
 
 <!-- Your website content goes here -->
 
+<!-- Add a div to display the version number -->
+<div id="versionDisplay" style="text-align: center; font-size: 18px;">Version Number: *</div>
+
 <script>
-  // Function to check for the latest version on GitHub
+  // Function to check for the latest version on GitHub and update the version display
   function checkForUpdates() {
     const versionFileUrl = 'https://raw.githubusercontent.com/PancakeeGuy/website/main/version';
 
@@ -19,6 +22,9 @@
         if (version.trim() !== currentVersion) {
           // If versions don't match, refresh the page to update
           location.reload();
+        } else {
+          // Update the version display with the current version number
+          document.getElementById('versionDisplay').textContent = 'Version Number: ' + currentVersion;
         }
       })
       .catch(error => {
