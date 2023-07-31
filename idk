@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Website</title>
+</head>
+<body>
+
+<!-- Your website content goes here -->
+
+<script>
+  // Function to check for the latest version on GitHub
+  function checkForUpdates() {
+    const versionFileUrl = 'https://raw.githubusercontent.com/your_username/your_repository/main/version.txt';
+
+    fetch(versionFileUrl)
+      .then(response => response.text())
+      .then(version => {
+        const currentVersion = '1.0.0'; // Replace this with the version of your website
+        if (version.trim() !== currentVersion) {
+          // If versions don't match, refresh the page to update
+          location.reload();
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching version file:', error);
+      });
+  }
+
+  // Call the function to check for updates on page load
+  checkForUpdates();
+</script>
+
+</body>
+</html>
